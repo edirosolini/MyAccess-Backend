@@ -55,8 +55,6 @@ namespace MyAccess.WebAPP
         {
             if (env.IsProduction())
             {
-                app.UseExceptionHandler("/Error");
-
                 app.UseHsts();
             }
 

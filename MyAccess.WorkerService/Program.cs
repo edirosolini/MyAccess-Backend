@@ -5,6 +5,7 @@
 namespace MyAccess.WorkerService
 {
     using System.Reflection;
+    using Microsoft.AspNetCore.Hosting;
     using MyAccess.DependencyInjection;
     using MyAccess.Services.Extensions;
     using MyAccess.WorkerService.CronJobs;
@@ -19,6 +20,10 @@ namespace MyAccess.WorkerService
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            })
             .UseWindowsService(configure =>
             {
                 configure.ServiceName = Assembly.GetExecutingAssembly().GetName().Name;
