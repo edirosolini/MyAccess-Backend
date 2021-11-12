@@ -365,3 +365,4 @@ FodyWeavers.xsd
 /Output_Staging
 /Output_Production
 /Output_WorkerService
+/MyAccess.WebAPP/wwwroot/lib

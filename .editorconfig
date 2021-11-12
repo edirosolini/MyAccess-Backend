@@ -9,6 +9,9 @@ dotnet_diagnostic.SA1600.severity = none
 # SA1601: Partial elements should be documented
 dotnet_diagnostic.SA1601.severity = none
 
+# SA1649: File name should match first type name
+dotnet_diagnostic.SA1649.severity = none
+
 # CA1816: Dispose methods should call SuppressFinalize
 dotnet_diagnostic.CA1816.severity = none
 

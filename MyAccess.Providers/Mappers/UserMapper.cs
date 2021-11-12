@@ -13,7 +13,7 @@ namespace MyAccess.Providers.Mappers
         public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
             builder.Property(e => e.Id)
-                   .IsRequired();
+                .IsRequired();
 
             builder
                 .HasIndex(u => u.EmailAddress)

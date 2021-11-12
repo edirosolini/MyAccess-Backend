@@ -12,5 +12,5 @@ git add .
 git commit -m "v$myBuildNumber"
 git push --force
 
-dotnet publish .\MyAccess.WebAPI\MyAccess.WebAPI.csproj /property:Version=$myBuildNumber /p:EnvironmentName=Staging --output Output_Staging
-dotnet publish .\MyAccess.WebAPI\MyAccess.WebAPI.csproj /property:Version=$myBuildNumber /p:EnvironmentName=Production --output Output_Production
+dotnet publish .\MyAccess.WebAPP\MyAccess.WebAPP.csproj /property:Version=$myBuildNumber /p:EnvironmentName=Staging --output Output_Staging
+dotnet publish .\MyAccess.WebAPP\MyAccess.WebAPP.csproj /property:Version=$myBuildNumber /p:EnvironmentName=Production --output Output_Production

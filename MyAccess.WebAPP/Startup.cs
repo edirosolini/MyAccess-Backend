@@ -1,8 +1,8 @@
-﻿// <copyright file="Startup.cs" company="PlaceholderCompany">
+// <copyright file="Startup.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace MyAccess.WebAPI
+namespace MyAccess.WebAPP
 {
     using System.Reflection;
     using System.Text.Json.Serialization;
@@ -14,7 +14,7 @@ namespace MyAccess.WebAPI
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using MyAccess.DependencyInjection;
-    using MyAccess.WebAPI.Helpers;
+    using MyAccess.WebAPP.Helpers;
 
     public class Startup
     {
@@ -25,8 +25,11 @@ namespace MyAccess.WebAPI
             this.Configuration = configuration;
         }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
+
             services.AddCors(c =>
             {
                 c.AddPolicy(
@@ -47,10 +50,13 @@ namespace MyAccess.WebAPI
             services.InjectionStart(this.Configuration);
         }
 
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsProduction())
             {
+                app.UseExceptionHandler("/Error");
+
                 app.UseHsts();
             }
 
@@ -88,10 +94,7 @@ namespace MyAccess.WebAPI
             {
                 endpoints.MapControllers();
 
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsJsonAsync($"{env.EnvironmentName}-{this.Configuration.GetSection("ApplicationName").Value}:{Assembly.GetEntryAssembly().GetName().Version}");
-                });
+                endpoints.MapRazorPages();
 
                 endpoints.MapGet("/api/Version", async context =>
                 {

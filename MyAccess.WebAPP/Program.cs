@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace MyAccess.WebAPI
+namespace MyAccess.WebAPP
 {
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;

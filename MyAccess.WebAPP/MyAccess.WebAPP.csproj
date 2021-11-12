@@ -29,4 +29,8 @@
     <ProjectReference Include="..\MyAccess.DependencyInjection\MyAccess.DependencyInjection.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

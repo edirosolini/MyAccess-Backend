@@ -2,7 +2,7 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace MyAccess.WebAPI.Helpers
+namespace MyAccess.WebAPP.Helpers
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Builder;
