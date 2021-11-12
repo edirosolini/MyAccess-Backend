@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyAccess.DependencyInjection\MyAccess.DependencyInjection.csproj" />
+    <ProjectReference Include="..\MyAccess.Domains\MyAccess.Domains.csproj" />
   </ItemGroup>
 
   <ItemGroup>

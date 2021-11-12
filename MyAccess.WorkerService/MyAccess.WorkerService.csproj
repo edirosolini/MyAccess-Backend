@@ -30,6 +30,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyAccess.DependencyInjection\MyAccess.DependencyInjection.csproj" />
-    <ProjectReference Include="..\MyAccess.Services\MyAccess.Services.csproj" />
   </ItemGroup>
+  
 </Project>
