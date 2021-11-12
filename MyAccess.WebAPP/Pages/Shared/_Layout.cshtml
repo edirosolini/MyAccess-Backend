@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var getName = @System.Reflection.Assembly.GetEntryAssembly().GetName();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,7 +23,7 @@
             @RenderBody()
             <footer>
                 <div class="ui center aligned container">
-                    &copy; @System.Reflection.Assembly.GetEntryAssembly().GetName().Version - MyAccess.WebAPP - <a asp-area="" asp-page="/Privacy">Privacy</a>
+                    &copy; @getName.Name: @getName.Version  - <a asp-area="" asp-page="/Privacy">Privacy</a>
                 </div>
             </footer>
         </div>
